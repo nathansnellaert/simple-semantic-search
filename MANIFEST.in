@@ -1,0 +1,17 @@
+include LICENSE.md
+include README.md
+include pyproject.toml
+
+# Include all Python files in the src directory
+recursive-include src *.py
+
+# Exclude tests, experiments, and examples from the distribution
+prune tests
+prune experiments
+prune examples
+
+# Exclude any cache directories or files
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store

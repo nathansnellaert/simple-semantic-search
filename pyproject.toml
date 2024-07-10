@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "simple-semantic-search"
+version = "0.1.0"
+description = ""
+authors = ["Nathan <11278700+nathansnellaert@users.noreply.github.com>"]
+readme = "README.md"
+packages = [
+    { include = "simple_semantic_search", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+openai = "^1.35.12"
+tenacity = "^8.5.0"
+python-dotenv = "^1.0.1"
+tqdm = "^4.66.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
