@@ -5,7 +5,7 @@ description = ""
 authors = ["Nathan <11278700+nathansnellaert@users.noreply.github.com>"]
 readme = "README.md"
 packages = [
-    { include = "simple_semantic_search", from = "src" },
+    { include = "lib", from = "src" },
 ]
 
 [tool.poetry.dependencies]
