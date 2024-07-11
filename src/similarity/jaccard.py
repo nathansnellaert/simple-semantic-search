@@ -1,5 +1,5 @@
 from .base import Similarity
-from ..preprocessing.preprocess import normalize_and_clean_text
+from preprocessing.preprocess import normalize_and_clean_text
 
 
 class JaccardSimilarity(Similarity):
