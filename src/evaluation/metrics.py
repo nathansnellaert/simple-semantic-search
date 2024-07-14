@@ -1,47 +1,23 @@
 import random
 
-import random
+random.seed(42)
 
 def get_reciprocal_rank(positive_similarities, negative_similarities):
-    """
-    Calculate the Mean Reciprocal Rank (MRR) for a query based on pre-calculated similarities.
+    # Combine all similarities with their corresponding items
+    all_items = list(zip(positive_similarities + negative_similarities, 
+                         ['positive'] * len(positive_similarities) + 
+                         ['negative'] * len(negative_similarities)))
     
-    This implementation uses a linear scan approach for improved efficiency.
-    It treats all matches scored 0 as the lowest possible score, adhering to
-    the traditional MRR definition for simplicity and deterministic results.
-
-    Args:
-    positive_similarities (list): List of similarity scores for positive items
-    negative_similarities (list): List of similarity scores for negative items
-
-    Returns:
-    float: The reciprocal rank of the highest-ranked positive item, or 0 if none found
-    """
+    # Sort by similarity (descending) and shuffle to break ties
+    random.shuffle(all_items)
+    sorted_items = sorted(all_items, key=lambda x: x[0], reverse=True)
     
-    # Combine similarities with their types
-    all_items = [(sim, True) for sim in positive_similarities] + \
-                [(sim, False) for sim in negative_similarities]
+    # Check if all similarities are the same
+    if len(set(sim for sim, _ in sorted_items)) == 1:
+        return None
     
-    # Track the number of items with higher similarity
-    higher_count = 0
+    # Find the highest rank (lowest index) of any positive item
+    ranks = [i + 1 for i, (sim, item_type) in enumerate(sorted_items) if item_type == 'positive']
+    best_rank = min(ranks) if ranks else 0
     
-    # Find the highest similarity score
-    max_similarity = max(sim for sim, _ in all_items)
-    
-    # If max similarity is 0, return 0 (all items have 0 similarity)
-    if max_similarity == 0:
-        return 0
-    
-    # Scan through items
-    for similarity, is_positive in all_items:
-        if similarity == max_similarity:
-            if is_positive:
-                return 1 / (higher_count + 1)
-            higher_count += 1
-        elif similarity < max_similarity:
-            if is_positive:
-                return 1 / (higher_count + 1)
-            higher_count += 1
-    
-    # If no positive item is found, return 0
-    return 0
+    return 1 / best_rank if best_rank > 0 else 0
