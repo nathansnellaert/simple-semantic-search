@@ -9,8 +9,8 @@ class GraphTraversalSimilarity(Similarity):
         self.damping_factor = damping_factor
 
     def compute(self, phrase1: str, phrase2: str) -> float:
-        words1 = set(normalize_and_clean_text(phrase1).split())
-        words2 = set(normalize_and_clean_text(phrase2).split())
+        words1 = set((phrase1).split())
+        words2 = set((phrase2).split())
         
         direct_matches = words1.intersection(words2)
         direct_match_score = len(direct_matches) / max(len(words1), len(words2))
