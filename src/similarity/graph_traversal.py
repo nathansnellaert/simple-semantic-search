@@ -28,9 +28,7 @@ class GraphTraversalSimilarity(Similarity):
         for word in all_words:
             t1 = traversal1.get(word, 0)
             t2 = traversal2.get(word, 0)
-            if t1 == 0 or t2 == 0:
-                continue
-            traversal_similarity += 1
+            traversal_similarity += min(t1, t2) / max(t1, t2) if max(t1, t2) > 0 else 0
             total_weight += 1
         
         normalized_traversal_similarity = traversal_similarity / total_weight if total_weight > 0 else 0
