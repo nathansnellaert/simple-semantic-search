@@ -1,7 +1,8 @@
+# Main script to run experiments. 
+# TODO: allow specification of similarity function specific parameters 
 import pandas as pd
 from tqdm import tqdm
 import json
-import hashlib
 import os
 import argparse
 from evaluation.metrics import get_reciprocal_rank
@@ -12,13 +13,38 @@ from similarity.sentence_transformers import SentenceTransformerCosine
 from similarity.bm25 import BM25Similarity
 from similarity.graph_traversal import GraphTraversalSimilarity
 from similarity.jaccard import JaccardSimilarity
+import time
+from preprocessing.numbers import remove_numbers
+from preprocessing.stemming import stem_words
+from preprocessing.lemmatizer import nltk_lemmatization
+from preprocessing.stopwords import nltk_stopword_removal
+from preprocessing.simple import lowercase, remove_punctuation, stem_words, remove_oov
 
-def calculate_mrr(df, similarity_function):
+
+preprocessing_functions = {
+    'lowercase': lowercase,
+    'remove_punctuation': remove_punctuation,
+    'remove_numbers': remove_numbers,
+    'stem_words': stem_words,
+    'remove_stopwords': nltk_stopword_removal,
+    'lemmatize': nltk_lemmatization,
+    'remove_oov': remove_oov
+}
+
+def apply_preprocessing(text, preprocessing_steps, vocabulary):
+    for step in preprocessing_steps:
+        if step == 'remove_oov':
+            text = preprocessing_functions[step](text, vocabulary)
+        else:
+            text = preprocessing_functions[step](text)
+    return text
+
+def calculate_mrr(df, similarity_function, preprocessing_steps, vocabulary):
     mrr_scores = []
     for _, row in tqdm(df.iterrows(), total=len(df), desc="Calculating MRR"):
-        query = row['query']
-        positives = row['positive']
-        negatives = row['negative']
+        query = apply_preprocessing(row['query'], preprocessing_steps, vocabulary)
+        positives = [apply_preprocessing(pos, preprocessing_steps, vocabulary) for pos in row['positive']]
+        negatives = [apply_preprocessing(neg, preprocessing_steps, vocabulary) for neg in row['negative']]
 
         positive_similarities = [similarity_function.compute(query, pos) for pos in positives]
         negative_similarities = [similarity_function.compute(query, neg) for neg in negatives]
@@ -28,64 +54,73 @@ def calculate_mrr(df, similarity_function):
 
     return sum(mrr_scores) / len(mrr_scores)
 
-def generate_id(dataset, similarity_function_name):
-    unique_string = f"{dataset}_{similarity_function_name}"
-    return hashlib.md5(unique_string.encode()).hexdigest()
-
-def save_results(results, dataset, similarity_function_name):
-    unique_id = generate_id(dataset, similarity_function_name)
+def save_results(results, id):
     output_dir = "experiment_results"
     os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, f"{unique_id}.json")
+    output_path = os.path.join(output_dir, f"{id}.json")
 
     with open(output_path, 'w') as f:
         json.dump(results, f)
 
+def create_vocabulary(train_df, test_df):
+    vocabulary = set()
+    for df in [train_df, test_df]:
+        vocabulary.update(df['query'].str.split().explode())
+        vocabulary.update(df['positive'].explode().str.split().explode())
+        vocabulary.update(df['negative'].explode().str.split().explode())
+    return vocabulary
+
+
+def run_experiment(dataset="scidocs", similarity_function="bm25", preprocessing=""):
+    preprocessing_steps = preprocessing.split(',') if preprocessing else []
+
+    if dataset == "scidocs":
+        train_df, test_df = scidocs("train"), scidocs("test")[0:500]
+    else:
+        raise ValueError(f"Unsupported dataset: {dataset}")
+
+    # Always create vocabulary
+    vocabulary = create_vocabulary(train_df, test_df)
+
+    if similarity_function == "sentence-transformer":
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        similarity_function = SentenceTransformerCosine(model)
+    elif similarity_function == "bm25":
+        corpus = train_df['query'].tolist() + \
+                 [item for sublist in train_df['positive'].tolist() for item in sublist] + \
+                 [item for sublist in train_df['negative'].tolist() for item in sublist]
+        corpus = [apply_preprocessing(text, preprocessing_steps, vocabulary) for text in corpus]
+        similarity_function = BM25Similarity(corpus)
+    elif similarity_function == "graph":
+        word_graph = load_graph()
+        similarity_function = GraphTraversalSimilarity(word_graph, max_depth=3)
+    elif similarity_function == "jaccard":
+        similarity_function = JaccardSimilarity()
+    else:
+        raise ValueError(f"Invalid similarity function name: {similarity_function}")
+
+    mrr = calculate_mrr(test_df, similarity_function, preprocessing_steps, vocabulary)
+
+    results = {
+        "dataset": dataset,
+        "similarity_function": similarity_function.__class__.__name__,
+        "preprocessing_steps": preprocessing_steps,
+        "mrr": mrr
+    }
+
+    id = time.time()
+    save_results(results, id)
+    print(f"Results saved to experiment_results/{id}.json")
+    return results
 
 def main():
     parser = argparse.ArgumentParser(description="MRR Calculation")
     parser.add_argument("--dataset", type=str, default="scidocs", help="Dataset to use (default: scidocs)")
-    parser.add_argument("--similarity_function", type=str, default="bm25", help="Similarity function to use (default: sentence-transformer)")
+    parser.add_argument("--similarity_function", type=str, default="bm25", help="Similarity function to use (default: bm25)")
+    parser.add_argument("--preprocessing", type=str, default="", help="Comma-separated list of preprocessing steps")
     args = parser.parse_args()
 
-    dataset = args.dataset
-    similarity_function_name = args.similarity_function
-
-    if dataset == "scidocs":
-        train_df, test_df = scidocs("train")[0:500], scidocs("validation")[0:500]
-    else:
-        raise ValueError(f"Unsupported dataset: {dataset}")
-
-    if similarity_function_name == "sentence-transformer":
-        model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-        similarity_function = SentenceTransformerCosine(model)
-
-    elif similarity_function_name == "bm25":
-        # Combine queries, positives, and negatives into the corpus
-        corpus = train_df['query'].tolist() + \
-                 [item for sublist in train_df['positive'].tolist() for item in sublist] + \
-                 [item for sublist in train_df['negative'].tolist() for item in sublist]
-        similarity_function = BM25Similarity(corpus)
-
-    elif similarity_function_name == "graph":
-        word_graph = load_graph()
-        similarity_function = GraphTraversalSimilarity(word_graph)
-
-    elif similarity_function_name == "jaccard":
-        similarity_function = JaccardSimilarity()
-
-    else:
-        raise ValueError(f"Invalid similarity function name: {similarity_function_name}")
-
-    mrr = calculate_mrr(test_df, similarity_function)
-    results = {
-        "dataset": dataset,
-        "similarity_function": similarity_function_name,
-        "mrr": mrr
-    }
-
-    save_results(results, dataset, similarity_function_name)
-    print(f"Results saved to experiment_results/{generate_id(dataset, similarity_function_name)}.json")
+    run_experiment(args.dataset, args.similarity_function, args.preprocessing)
 
 if __name__ == "__main__":
     main()
