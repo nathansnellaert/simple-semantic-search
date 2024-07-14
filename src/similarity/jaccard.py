@@ -1,6 +1,4 @@
 from .base import Similarity
-from preprocessing.preprocess import normalize_and_clean_text
-
 
 class JaccardSimilarity(Similarity):
     def __init__(self):
@@ -8,8 +6,8 @@ class JaccardSimilarity(Similarity):
 
     def compute(self, phrase1: str, phrase2: str) -> float:
         # Normalize and split the phrases into words
-        words1 = set(normalize_and_clean_text(phrase1))
-        words2 = set(normalize_and_clean_text(phrase2))
+        words1 = set(phrase1.split())
+        words2 = set(phrase2.split())
 
         # Find the intersection (common words)
         common_words = words1.intersection(words2)
