@@ -62,12 +62,11 @@ def save_results(results, id):
     with open(output_path, 'w') as f:
         json.dump(results, f)
 
-def create_vocabulary(train_df, test_df):
+def create_vocabulary(df):
     vocabulary = set()
-    for df in [train_df, test_df]:
-        vocabulary.update(df['query'].str.split().explode())
-        vocabulary.update(df['positive'].explode().str.split().explode())
-        vocabulary.update(df['negative'].explode().str.split().explode())
+    vocabulary.update(df['query'].str.split().explode())
+    vocabulary.update(df['positive'].explode().str.split().explode())
+    vocabulary.update(df['negative'].explode().str.split().explode())
     return vocabulary
 
 
@@ -80,7 +79,7 @@ def run_experiment(dataset="scidocs", similarity_function="bm25", preprocessing=
         raise ValueError(f"Unsupported dataset: {dataset}")
 
     # Always create vocabulary
-    vocabulary = create_vocabulary(train_df, test_df)
+    vocabulary = create_vocabulary(train_df)
 
     if similarity_function == "sentence-transformer":
         model = SentenceTransformer('all-MiniLM-L6-v2')
