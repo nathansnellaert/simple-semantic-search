@@ -41,7 +41,10 @@ def apply_preprocessing(text, preprocessing_steps, vocabulary):
 
 def calculate_mrr(df, similarity_function, preprocessing_steps, vocabulary):
     mrr_scores = []
-    for _, row in tqdm(df.iterrows(), total=len(df), desc="Calculating MRR"):
+    none_count = 0
+    total_count = len(df)
+    
+    for _, row in tqdm(df.iterrows(), total=total_count, desc="Calculating MRR"):
         query = apply_preprocessing(row['query'], preprocessing_steps, vocabulary)
         positives = [apply_preprocessing(pos, preprocessing_steps, vocabulary) for pos in row['positive']]
         negatives = [apply_preprocessing(neg, preprocessing_steps, vocabulary) for neg in row['negative']]
@@ -50,9 +53,16 @@ def calculate_mrr(df, similarity_function, preprocessing_steps, vocabulary):
         negative_similarities = [similarity_function.compute(query, neg) for neg in negatives]
 
         rr = get_reciprocal_rank(positive_similarities, negative_similarities)
-        mrr_scores.append(rr)
+        if rr is None:
+            none_count += 1
+        else:
+            mrr_scores.append(rr)
 
-    return sum(mrr_scores) / len(mrr_scores)
+    valid_scores = [score for score in mrr_scores if score is not None]
+    average_mrr = sum(valid_scores) / len(valid_scores) if valid_scores else 0
+    none_percentage = (none_count / total_count) * 100
+
+    return average_mrr, none_percentage
 
 def save_results(results, id):
     output_dir = "experiment_results"
@@ -98,18 +108,21 @@ def run_experiment(dataset="scidocs", similarity_function="bm25", preprocessing=
     else:
         raise ValueError(f"Invalid similarity function name: {similarity_function}")
 
-    mrr = calculate_mrr(test_df, similarity_function, preprocessing_steps, vocabulary)
+    mrr, none_percentage = calculate_mrr(test_df, similarity_function, preprocessing_steps, vocabulary)
 
     results = {
         "dataset": dataset,
         "similarity_function": similarity_function.__class__.__name__,
         "preprocessing_steps": preprocessing_steps,
-        "mrr": mrr
+        "mrr": mrr,
+        "none_percentage": none_percentage
     }
 
     id = time.time()
     save_results(results, id)
     print(f"Results saved to experiment_results/{id}.json")
+    print(f"MRR: {mrr}")
+    print(f"Percentage of None values: {none_percentage}%")
     return results
 
 def main():
