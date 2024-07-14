@@ -1,5 +1,4 @@
 from .base import Similarity
-from preprocessing.preprocess import normalize_and_clean_text
 from collections import defaultdict
 
 class GraphTraversalSimilarity(Similarity):

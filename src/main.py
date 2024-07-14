@@ -18,7 +18,7 @@ from preprocessing.numbers import remove_numbers
 from preprocessing.stemming import stem_words
 from preprocessing.lemmatizer import nltk_lemmatization
 from preprocessing.stopwords import nltk_stopword_removal
-from preprocessing.simple import lowercase, remove_punctuation, stem_words, remove_oov
+from preprocessing.simple import lowercase, remove_punctuation, remove_oov
 
 
 preprocessing_functions = {
