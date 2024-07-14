@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 
-def load_graph(path="word_graph.json", add_values_as_node=False):
+def load_graph(path, add_values_as_node=False):
     with open(path, "r") as f:
         word_graph = json.load(f)
 
