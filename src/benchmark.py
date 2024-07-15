@@ -10,7 +10,7 @@ from preprocessing.lemmatizer import nltk_lemmatization, custom_graph_lemmatizat
 from preprocessing.stopwords import nltk_stopword_removal
 from preprocessing.simple import lowercase, remove_punctuation, remove_oov
 from evaluation.metrics import get_reciprocal_rank
-from evaluation.evals import scidocs
+from evaluation.evals import scidocs, custom
 
 # Initialize the custom lemmatizer
 graph_path = './data/lemma_mapping.json'
@@ -79,6 +79,8 @@ def create_vocabulary(df):
 def load_dataset(dataset):
     if dataset == "scidocs":
         train_df, test_df = scidocs("train"), scidocs("test")[0:500]
+    elif dataset == "custom":
+        train_df, test_df = custom("train"), custom("test")
     else:
         raise ValueError(f"Unsupported dataset: {dataset}")
     return train_df, test_df
