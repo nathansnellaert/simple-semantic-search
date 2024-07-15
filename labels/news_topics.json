@@ -1,0 +1,182 @@
+[
+    {
+        "query": "latest COVID-19 updates",
+        "positive": "current coronavirus news",
+        "negative": [
+            "historical pandemics",
+            "COVID-19 conspiracy theories",
+            "non-pandemic related health news"
+        ]
+    },
+    {
+        "query": "US presidential election results",
+        "positive": "current US election outcomes",
+        "negative": [
+            "previous election results",
+            "election predictions",
+            "non-US election news"
+        ]
+    },
+    {
+        "query": "global warming effects",
+        "positive": "climate change impact articles",
+        "negative": [
+            "weather forecasts",
+            "geological phenomena",
+            "unrelated environmental news"
+        ]
+    },
+    {
+        "query": "stock market trends",
+        "positive": "current stock market analysis",
+        "negative": [
+            "cryptocurrency trends",
+            "real estate market news",
+            "historical stock data"
+        ]
+    },
+    {
+        "query": "tech company earnings reports",
+        "positive": "latest tech industry financial results",
+        "negative": [
+            "tech company product launches",
+            "startup funding news",
+            "general business news"
+        ]
+    },
+    {
+        "query": "Middle East peace talks",
+        "positive": "current Middle East peace negotiations",
+        "negative": [
+            "Middle East historical conflicts",
+            "unrelated international diplomacy",
+            "domestic policy news"
+        ]
+    },
+    {
+        "query": "natural disaster updates",
+        "positive": "latest news on recent natural disasters",
+        "negative": [
+            "natural disaster preparedness tips",
+            "historical natural disasters",
+            "unrelated weather news"
+        ]
+    },
+    {
+        "query": "space exploration missions",
+        "positive": "current space missions",
+        "negative": [
+            "astronomical discoveries",
+            "historical space missions",
+            "science fiction space articles"
+        ]
+    },
+    {
+        "query": "global economic outlook",
+        "positive": "current global economic forecasts",
+        "negative": [
+            "historical economic data",
+            "domestic economic policies",
+            "business and entrepreneurship news"
+        ]
+    },
+    {
+        "query": "healthcare policy changes",
+        "positive": "current healthcare policy updates",
+        "negative": [
+            "historical healthcare policies",
+            "healthcare industry news",
+            "general health advice"
+        ]
+    },
+    {
+        "query": "sports championship results",
+        "positive": "latest sports championship outcomes",
+        "negative": [
+            "sports player interviews",
+            "upcoming sports events",
+            "historical sports records"
+        ]
+    },
+    {
+        "query": "major scientific breakthroughs",
+        "positive": "recent significant scientific discoveries",
+        "negative": [
+            "historical scientific discoveries",
+            "scientific theories",
+            "science fiction articles"
+        ]
+    },
+    {
+        "query": "entertainment industry news",
+        "positive": "latest entertainment sector updates",
+        "negative": [
+            "celebrity gossip",
+            "movie reviews",
+            "unrelated cultural news"
+        ]
+    },
+    {
+        "query": "international trade agreements",
+        "positive": "current global trade deals",
+        "negative": [
+            "domestic trade policies",
+            "historical trade data",
+            "general business trends"
+        ]
+    },
+    {
+        "query": "environmental protection laws",
+        "positive": "new environmental legislation",
+        "negative": [
+            "historical environmental laws",
+            "general environmental news",
+            "wildlife conservation efforts"
+        ]
+    },
+    {
+        "query": "cybersecurity threats",
+        "positive": "latest online security threats",
+        "negative": [
+            "general tech news",
+            "internet usage statistics",
+            "historical hacking cases"
+        ]
+    },
+    {
+        "query": "international space station updates",
+        "positive": "current news on the ISS",
+        "negative": [
+            "historical space station missions",
+            "general space exploration news",
+            "astronomical events"
+        ]
+    },
+    {
+        "query": "political scandals",
+        "positive": "recent political controversies",
+        "negative": [
+            "historical political scandals",
+            "politician biographies",
+            "unrelated political news"
+        ]
+    },
+    {
+        "query": "renewable energy advancements",
+        "positive": "latest developments in renewable energy",
+        "negative": [
+            "traditional energy sources",
+            "historical energy data",
+            "energy consumption tips"
+        ]
+    },
+    {
+        "query": "global health crises",
+        "positive": "current worldwide health emergencies",
+        "negative": [
+            "local health issues",
+            "health and wellness tips",
+            "non-crisis health news"
+        ]
+    }
+]

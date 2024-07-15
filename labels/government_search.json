@@ -1,0 +1,182 @@
+[
+    {
+        "query": "current federal tax rates",
+        "positive": "Overview of Current Federal Tax Rates",
+        "negative": [
+            "Historical Tax Rate Changes",
+            "State Tax Rates Comparison",
+            "Tips for Filing Taxes Efficiently"
+        ]
+    },
+    {
+        "query": "recent government policies on climate change",
+        "positive": "New Government Measures on Climate Change",
+        "negative": [
+            "Impact of Climate Change on Wildlife",
+            "Global Climate Agreements",
+            "Renewable Energy Technologies"
+        ]
+    },
+    {
+        "query": "government healthcare reforms",
+        "positive": "Government Changes in Healthcare Policies",
+        "negative": [
+            "Healthcare Systems Around the World",
+            "Effects of Diet on Health",
+            "Technological Advances in Medicine"
+        ]
+    },
+    {
+        "query": "current immigration laws",
+        "positive": "New Guidelines for Immigration Laws",
+        "negative": [
+            "History of Immigration in the US",
+            "Cultural Impact of Immigration",
+            "Tourism and Travel Tips"
+        ]
+    },
+    {
+        "query": "recent changes in education policy",
+        "positive": "Updates in National Education Policies",
+        "negative": [
+            "History of Education Reforms",
+            "Teaching Techniques",
+            "Private vs Public Schooling"
+        ]
+    },
+    {
+        "query": "latest government infrastructure projects",
+        "positive": "New Infrastructure Developments by Government",
+        "negative": [
+            "History of Infrastructure in the US",
+            "Private Sector Construction Projects",
+            "Urban Planning Theories"
+        ]
+    },
+    {
+        "query": "current social security benefits",
+        "positive": "Updates on Social Security Benefits",
+        "negative": [
+            "Retirement Planning Strategies",
+            "Private Pension Plans",
+            "Healthcare Benefits Analysis"
+        ]
+    },
+    {
+        "query": "latest national defense strategies",
+        "positive": "New Strategies in National Defense",
+        "negative": [
+            "History of Military Conflicts",
+            "Global Defense Alliances",
+            "Technological Advances in Warfare"
+        ]
+    },
+    {
+        "query": "new government housing policies",
+        "positive": "Updates on Housing Policies",
+        "negative": [
+            "Real Estate Market Trends",
+            "Home Buying Tips",
+            "Interior Design Innovations"
+        ]
+    },
+    {
+        "query": "current government cybersecurity measures",
+        "positive": "New Cybersecurity Measures by Government",
+        "negative": [
+            "History of Cyber Attacks",
+            "Private Sector Cybersecurity",
+            "Personal Data Protection Tips"
+        ]
+    },
+    {
+        "query": "latest government trade policies",
+        "positive": "New Trade Policies and Agreements",
+        "negative": [
+            "Global Trade Analysis",
+            "History of Trade Wars",
+            "Economic Theories on Trade"
+        ]
+    },
+    {
+        "query": "recent government environmental regulations",
+        "positive": "Updates on Environmental Regulations",
+        "negative": [
+            "Impact of Pollution on Health",
+            "Wildlife Conservation Efforts",
+            "Renewable Energy Solutions"
+        ]
+    },
+    {
+        "query": "new government initiatives for small businesses",
+        "positive": "Government Support for Small Businesses",
+        "negative": [
+            "Entrepreneurship Tips",
+            "Market Analysis for Small Businesses",
+            "Case Studies of Successful Startups"
+        ]
+    },
+    {
+        "query": "current government foreign policy",
+        "positive": "Updates on Foreign Policy",
+        "negative": [
+            "History of Diplomatic Relations",
+            "International Trade Deals",
+            "Global Political Theories"
+        ]
+    },
+    {
+        "query": "latest government initiatives for public health",
+        "positive": "New Public Health Initiatives",
+        "negative": [
+            "Healthcare Technology Innovations",
+            "Personal Health Tips",
+            "History of Public Health Crises"
+        ]
+    },
+    {
+        "query": "recent government budget allocations",
+        "positive": "Updates on Budget Allocations",
+        "negative": [
+            "History of Government Budgets",
+            "Economic Theories on Budgeting",
+            "Private Sector Financial Strategies"
+        ]
+    },
+    {
+        "query": "new government policies on renewable energy",
+        "positive": "Government Policies for Renewable Energy",
+        "negative": [
+            "Technological Advances in Renewable Energy",
+            "Global Energy Consumption Trends",
+            "Private Sector Renewable Energy Projects"
+        ]
+    },
+    {
+        "query": "current government disaster relief efforts",
+        "positive": "Updates on Disaster Relief Efforts",
+        "negative": [
+            "History of Natural Disasters",
+            "Private Sector Disaster Recovery",
+            "Insurance Policies for Disasters"
+        ]
+    },
+    {
+        "query": "latest government research funding",
+        "positive": "New Research Funding Announcements",
+        "negative": [
+            "Case Studies of Funded Research",
+            "Private Sector Research Investments",
+            "Impact of Research on Society"
+        ]
+    },
+    {
+        "query": "current government transportation policies",
+        "positive": "Updates on Transportation Policies",
+        "negative": [
+            "History of Transportation Systems",
+            "Technological Innovations in Transport",
+            "Case Studies of Urban Planning"
+        ]
+    }
+]

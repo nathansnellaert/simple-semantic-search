@@ -1,0 +1,182 @@
+[
+    {
+        "query": "how to play guitar for beginners",
+        "positive": "Beginner's Guide to Playing Guitar",
+        "negative": [
+            "Top 10 Guitarists of All Time",
+            "Advanced Guitar Techniques",
+            "Best Guitar Maintenance Tips"
+        ]
+    },
+    {
+        "query": "basic yoga for flexibility",
+        "positive": "Yoga Poses for Increased Flexibility",
+        "negative": [
+            "History of Yoga Practices",
+            "Power Yoga for Strength",
+            "Meditation Techniques for Stress Relief"
+        ]
+    },
+    {
+        "query": "learn python programming",
+        "positive": "Python Programming for Beginners",
+        "negative": [
+            "Advanced Data Structures in Python",
+            "History of Programming Languages",
+            "Introduction to JavaScript"
+        ]
+    },
+    {
+        "query": "baking a chocolate cake",
+        "positive": "Step-by-Step Guide to Baking a Chocolate Cake",
+        "negative": [
+            "History of Chocolate Desserts",
+            "Healthy Snack Alternatives",
+            "Top 10 Cake Decorations"
+        ]
+    },
+    {
+        "query": "beginner workout routine",
+        "positive": "Easy Workout Routines for Beginners",
+        "negative": [
+            "Top 10 Fitness Gurus",
+            "Extreme Bodybuilding Tips",
+            "Yoga and Meditation Techniques"
+        ]
+    },
+    {
+        "query": "basic photography tips",
+        "positive": "Essential Photography Tips for Beginners",
+        "negative": [
+            "Advanced Photo Editing Techniques",
+            "History of Photography",
+            "Best Cameras for Professional Photographers"
+        ]
+    },
+    {
+        "query": "introduction to digital marketing",
+        "positive": "Digital Marketing 101: Getting Started",
+        "negative": [
+            "Top 10 Marketing Campaigns",
+            "History of Advertising",
+            "Advanced SEO Techniques"
+        ]
+    },
+    {
+        "query": "how to knit a scarf",
+        "positive": "Knitting a Scarf: A Beginner's Guide",
+        "negative": [
+            "Top 10 Knitting Patterns",
+            "History of Knitting",
+            "Advanced Crochet Techniques"
+        ]
+    },
+    {
+        "query": "basic car maintenance tips",
+        "positive": "Essential Car Maintenance Tips for Beginners",
+        "negative": [
+            "Top Luxury Cars of 2024",
+            "History of the Automobile",
+            "Advanced Engine Repair Techniques"
+        ]
+    },
+    {
+        "query": "learning spanish for beginners",
+        "positive": "Beginner Spanish Lessons",
+        "negative": [
+            "History of the Spanish Language",
+            "Advanced Spanish Grammar",
+            "Travel Tips for Spain"
+        ]
+    },
+    {
+        "query": "how to start a garden",
+        "positive": "Starting a Garden: Tips for Beginners",
+        "negative": [
+            "Top 10 Houseplants",
+            "History of Botanical Gardens",
+            "Advanced Landscaping Techniques"
+        ]
+    },
+    {
+        "query": "basic drawing techniques",
+        "positive": "Drawing Techniques for Beginners",
+        "negative": [
+            "History of Art Movements",
+            "Top 10 Famous Artists",
+            "Advanced Digital Art Tips"
+        ]
+    },
+    {
+        "query": "introduction to investing",
+        "positive": "Investing for Beginners: A Guide",
+        "negative": [
+            "History of Stock Markets",
+            "Top Investment Strategies of Billionaires",
+            "Advanced Financial Planning Techniques"
+        ]
+    },
+    {
+        "query": "how to meditate effectively",
+        "positive": "Effective Meditation Techniques for Beginners",
+        "negative": [
+            "History of Meditation Practices",
+            "Top 10 Mindfulness Apps",
+            "Advanced Breathing Techniques"
+        ]
+    },
+    {
+        "query": "learn html and css",
+        "positive": "HTML and CSS for Beginners",
+        "negative": [
+            "History of the Internet",
+            "Advanced JavaScript Techniques",
+            "Top 10 Web Design Trends"
+        ]
+    },
+    {
+        "query": "how to sew a dress",
+        "positive": "Sewing a Dress: A Step-by-Step Guide",
+        "negative": [
+            "History of Fashion",
+            "Top 10 Sewing Machines",
+            "Advanced Quilting Techniques"
+        ]
+    },
+    {
+        "query": "beginner piano lessons",
+        "positive": "Piano Lessons for Beginners",
+        "negative": [
+            "Top 10 Pianists of All Time",
+            "History of Classical Music",
+            "Advanced Piano Techniques"
+        ]
+    },
+    {
+        "query": "introduction to data science",
+        "positive": "Data Science Basics: A Beginner's Guide",
+        "negative": [
+            "Top 10 Data Scientists",
+            "History of Data Analysis",
+            "Advanced Machine Learning Techniques"
+        ]
+    },
+    {
+        "query": "how to cook pasta",
+        "positive": "Cooking Pasta: A Beginner's Guide",
+        "negative": [
+            "History of Italian Cuisine",
+            "Top 10 Pasta Recipes",
+            "Advanced Cooking Techniques"
+        ]
+    },
+    {
+        "query": "basic carpentry skills",
+        "positive": "Carpentry Skills for Beginners",
+        "negative": [
+            "History of Woodworking",
+            "Top 10 Carpentry Tools",
+            "Advanced Furniture Making Techniques"
+        ]
+    }
+]

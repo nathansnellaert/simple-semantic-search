@@ -1,0 +1,182 @@
+[
+    {
+        "query": "beginner guitar lessons",
+        "positive": "easy guitar tutorials for beginners",
+        "negative": [
+            "advanced guitar techniques",
+            "professional guitar performances",
+            "guitar maintenance tips"
+        ]
+    },
+    {
+        "query": "home workout routines",
+        "positive": "at-home exercise programs",
+        "negative": [
+            "gym-based workout plans",
+            "advanced fitness challenges",
+            "workout gear reviews"
+        ]
+    },
+    {
+        "query": "healthy smoothie recipes",
+        "positive": "nutritious smoothie making guides",
+        "negative": [
+            "fast food reviews",
+            "dessert recipes",
+            "cooking appliance reviews"
+        ]
+    },
+    {
+        "query": "travel vlogs in Japan",
+        "positive": "Japanese travel experiences",
+        "negative": [
+            "home renovation vlogs",
+            "travel vlogs in Europe",
+            "Japanese language tutorials"
+        ]
+    },
+    {
+        "query": "coding tutorials for beginners",
+        "positive": "introductory programming lessons",
+        "negative": [
+            "expert coding techniques",
+            "software development news",
+            "tech gadget reviews"
+        ]
+    },
+    {
+        "query": "funny cat videos",
+        "positive": "humorous feline clips",
+        "negative": [
+            "dog training videos",
+            "wildlife documentaries",
+            "serious pet care advice"
+        ]
+    },
+    {
+        "query": "makeup tutorials for beginners",
+        "positive": "basic makeup application guides",
+        "negative": [
+            "professional makeup artist techniques",
+            "makeup product reviews",
+            "skincare routine videos"
+        ]
+    },
+    {
+        "query": "DIY home improvement projects",
+        "positive": "do-it-yourself house renovations",
+        "negative": [
+            "professional construction services",
+            "home decor inspiration",
+            "gardening tips"
+        ]
+    },
+    {
+        "query": "best sci-fi movies of 2023",
+        "positive": "top science fiction films released in 2023",
+        "negative": [
+            "classic sci-fi movies",
+            "best horror movies of 2023",
+            "movie trailer compilations"
+        ]
+    },
+    {
+        "query": "guided meditation for sleep",
+        "positive": "relaxing meditation sessions for better sleep",
+        "negative": [
+            "intense workout meditations",
+            "meditation history documentaries",
+            "motivational speeches"
+        ]
+    },
+    {
+        "query": "how to start a YouTube channel",
+        "positive": "beginner's guide to creating a YouTube channel",
+        "negative": [
+            "YouTube policy updates",
+            "channel monetization strategies",
+            "famous YouTuber interviews"
+        ]
+    },
+    {
+        "query": "best video editing software",
+        "positive": "top-rated video editing programs",
+        "negative": [
+            "photo editing software reviews",
+            "hardware for video editing",
+            "video editing techniques"
+        ]
+    },
+    {
+        "query": "motivational speeches",
+        "positive": "inspiring talks and speeches",
+        "negative": [
+            "stand-up comedy routines",
+            "historical documentaries",
+            "celebrity interviews"
+        ]
+    },
+    {
+        "query": "how to bake a cake",
+        "positive": "step-by-step cake baking guides",
+        "negative": [
+            "pie baking tutorials",
+            "cookie recipes",
+            "kitchen appliance reviews"
+        ]
+    },
+    {
+        "query": "guitar cover songs",
+        "positive": "popular songs covered on guitar",
+        "negative": [
+            "original guitar compositions",
+            "piano cover songs",
+            "guitar tuning guides"
+        ]
+    },
+    {
+        "query": "learn Spanish for beginners",
+        "positive": "basic Spanish language lessons",
+        "negative": [
+            "advanced Spanish grammar",
+            "Spanish literature reviews",
+            "travel tips for Spain"
+        ]
+    },
+    {
+        "query": "top 10 video games of all time",
+        "positive": "best video games ever made",
+        "negative": [
+            "top 10 board games",
+            "recent video game releases",
+            "gaming console reviews"
+        ]
+    },
+    {
+        "query": "easy vegan recipes",
+        "positive": "simple plant-based meal ideas",
+        "negative": [
+            "meat-based recipes",
+            "complicated gourmet dishes",
+            "vegan diet debates"
+        ]
+    },
+    {
+        "query": "how to draw anime characters",
+        "positive": "anime drawing tutorials",
+        "negative": [
+            "digital painting techniques",
+            "western cartoon drawing guides",
+            "art supply reviews"
+        ]
+    },
+    {
+        "query": "gardening tips for beginners",
+        "positive": "basic gardening advice",
+        "negative": [
+            "professional landscaping services",
+            "indoor plant care",
+            "garden pest control"
+        ]
+    }
+]

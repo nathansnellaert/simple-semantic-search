@@ -1,0 +1,182 @@
+[
+    {
+        "query": "affordable running shoes",
+        "positive": "budget-friendly athletic footwear",
+        "negative": [
+            "expensive designer shoes",
+            "high-end fashion sneakers",
+            "luxury sports footwear"
+        ]
+    },
+    {
+        "query": "best noise-cancelling headphones",
+        "positive": "top-rated sound isolation headphones",
+        "negative": [
+            "cheap earbuds",
+            "basic wired headphones",
+            "standard over-ear headphones"
+        ]
+    },
+    {
+        "query": "eco-friendly water bottles",
+        "positive": "sustainable drinking containers",
+        "negative": [
+            "single-use plastic bottles",
+            "disposable cups",
+            "non-recyclable water jugs"
+        ]
+    },
+    {
+        "query": "high quality kitchen knives",
+        "positive": "premium chef's knives",
+        "negative": [
+            "plastic cutlery",
+            "disposable knives",
+            "low-cost utility knives"
+        ]
+    },
+    {
+        "query": "comfortable office chairs",
+        "positive": "ergonomic desk chairs",
+        "negative": [
+            "uncomfortable stools",
+            "hard wooden chairs",
+            "cheap folding chairs"
+        ]
+    },
+    {
+        "query": "durable hiking boots",
+        "positive": "long-lasting trail footwear",
+        "negative": [
+            "casual sneakers",
+            "flip-flops",
+            "indoor slippers"
+        ]
+    },
+    {
+        "query": "stylish women's handbags",
+        "positive": "fashionable ladies' purses",
+        "negative": [
+            "men's wallets",
+            "basic tote bags",
+            "unadorned backpacks"
+        ]
+    },
+    {
+        "query": "reliable laptop computers",
+        "positive": "dependable portable computers",
+        "negative": [
+            "outdated desktop PCs",
+            "unreliable tablets",
+            "cheap netbooks"
+        ]
+    },
+    {
+        "query": "energy-efficient refrigerators",
+        "positive": "eco-friendly cooling appliances",
+        "negative": [
+            "high-energy consumption fridges",
+            "outdated ice boxes",
+            "non-electric coolers"
+        ]
+    },
+    {
+        "query": "premium quality bed sheets",
+        "positive": "luxury bedding sets",
+        "negative": [
+            "low-thread count sheets",
+            "scratchy blankets",
+            "cheap mattress covers"
+        ]
+    },
+    {
+        "query": "best DSLR cameras",
+        "positive": "top-rated digital single-lens reflex cameras",
+        "negative": [
+            "basic point-and-shoot cameras",
+            "cheap webcams",
+            "low-resolution camcorders"
+        ]
+    },
+    {
+        "query": "lightweight luggage sets",
+        "positive": "easy-to-carry travel bags",
+        "negative": [
+            "heavy suitcases",
+            "bulky trunks",
+            "overweight duffle bags"
+        ]
+    },
+    {
+        "query": "organic skincare products",
+        "positive": "natural beauty items",
+        "negative": [
+            "chemical-based cosmetics",
+            "synthetic skincare creams",
+            "inexpensive lotions"
+        ]
+    },
+    {
+        "query": "high-performance gaming laptops",
+        "positive": "top-tier gaming notebooks",
+        "negative": [
+            "basic business laptops",
+            "standard ultrabooks",
+            "entry-level netbooks"
+        ]
+    },
+    {
+        "query": "waterproof outdoor jackets",
+        "positive": "rainproof hiking coats",
+        "negative": [
+            "indoor blazers",
+            "cotton sweaters",
+            "casual hoodies"
+        ]
+    },
+    {
+        "query": "compact digital cameras",
+        "positive": "small-sized photo devices",
+        "negative": [
+            "large DSLR cameras",
+            "vintage film cameras",
+            "bulky camcorders"
+        ]
+    },
+    {
+        "query": "high-capacity external hard drives",
+        "positive": "large storage portable drives",
+        "negative": [
+            "low-capacity USB sticks",
+            "small memory cards",
+            "internal hard drives"
+        ]
+    },
+    {
+        "query": "child-safe car seats",
+        "positive": "secure infant car restraints",
+        "negative": [
+            "adult seat cushions",
+            "non-regulated booster seats",
+            "standard car seats"
+        ]
+    },
+    {
+        "query": "modern coffee makers",
+        "positive": "contemporary espresso machines",
+        "negative": [
+            "classic drip coffee makers",
+            "antique percolators",
+            "manual coffee grinders"
+        ]
+    },
+    {
+        "query": "high-speed internet routers",
+        "positive": "fast wireless network devices",
+        "negative": [
+            "outdated modems",
+            "basic network switches",
+            "slow access points"
+        ]
+    }
+]

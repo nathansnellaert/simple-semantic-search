@@ -1,0 +1,182 @@
+[
+    {
+        "query": "latest COVID-19 updates",
+        "positive": "New Developments in the Fight Against COVID-19",
+        "negative": [
+            "Pandemics of the Past: Lessons Learned",
+            "COVID-19 Myths: Debunking Common Misconceptions",
+            "Stock Market Reactions to Economic News"
+        ]
+    },
+    {
+        "query": "US presidential election results",
+        "positive": "Latest Outcomes in the US Presidential Election",
+        "negative": [
+            "Analysis of Previous Election Results",
+            "Breakthroughs in Medical Research",
+            "Celebrity Scandals: Recent Headlines"
+        ]
+    },
+    {
+        "query": "global warming effects",
+        "positive": "Impact of Climate Change on Weather Patterns",
+        "negative": [
+            "Next Week's Weather Predictions",
+            "New Legislation in Congress",
+            "Quarterly Earnings Reports"
+        ]
+    },
+    {
+        "query": "tech industry trends 2024",
+        "positive": "Emerging Trends in the Tech Industry for 2024",
+        "negative": [
+            "Review of Last Year's Tech Innovations",
+            "New Workout Routines for a Healthy Lifestyle",
+            "This Season's Fashion Must-Haves"
+        ]
+    },
+    {
+        "query": "space exploration advancements",
+        "positive": "Innovations in Space Exploration Technology",
+        "negative": [
+            "The History of Apollo Missions",
+            "Upcoming Art Shows to Watch",
+            "Changes in Global Trade Policies"
+        ]
+    },
+    {
+        "query": "AI in healthcare",
+        "positive": "How AI is Transforming the Healthcare Industry",
+        "negative": [
+            "AI Applications in Finance",
+            "Current Health News Unrelated to AI",
+            "Top Travel Destinations for 2024"
+        ]
+    },
+    {
+        "query": "renewable energy sources",
+        "positive": "The Future of Renewable Energy Solutions",
+        "negative": [
+            "Developments in Oil and Gas Industries",
+            "In-Depth Interviews with Hollywood Stars",
+            "Upcoming Sports Events"
+        ]
+    },
+    {
+        "query": "cryptocurrency market trends",
+        "positive": "Current Trends in the Cryptocurrency Market",
+        "negative": [
+            "Financial Market Trends Before Cryptocurrencies",
+            "Changes in Educational Policies",
+            "Album Releases and Music Reviews"
+        ]
+    },
+    {
+        "query": "mental health awareness",
+        "positive": "Efforts to Raise Awareness on Mental Health",
+        "negative": [
+            "Physical Fitness: Exercise and Wellness",
+            "New Fashion Lines for the Summer",
+            "Latest Tech Product Reviews"
+        ]
+    },
+    {
+        "query": "virtual reality applications",
+        "positive": "Innovative Uses of Virtual Reality Technology",
+        "negative": [
+            "Technologies Before the VR Era",
+            "Exotic Places to Visit This Year",
+            "Economic Forecasting and Predictions"
+        ]
+    },
+    {
+        "query": "renewable energy policies",
+        "positive": "Government Policies on Renewable Energy",
+        "negative": [
+            "Historical Energy Regulations",
+            "New Exhibits in the Art World",
+            "Upcoming Science Fiction Releases"
+        ]
+    },
+    {
+        "query": "modern art trends",
+        "positive": "What's Trending in Modern Art Today",
+        "negative": [
+            "Classic Art Movements Revisited",
+            "Recent Sports Match Summaries",
+            "Breakthroughs in Artificial Intelligence"
+        ]
+    },
+    {
+        "query": "urban planning innovations",
+        "positive": "Future Innovations in Urban Planning",
+        "negative": [
+            "Development of Ancient Cities",
+            "Health Tips for Staying Fit",
+            "Analysis of Political Campaigns"
+        ]
+    },
+    {
+        "query": "online education benefits",
+        "positive": "Advantages of Online Learning Platforms",
+        "negative": [
+            "Classroom Learning vs. Online Education",
+            "World's Most Famous Landmarks",
+            "Gossip and News from the Entertainment World"
+        ]
+    },
+    {
+        "query": "advancements in medical technology",
+        "positive": "Latest Breakthroughs in Medical Technology",
+        "negative": [
+            "Medical Innovations Through the Ages",
+            "Trending Recipes and Cooking Tips",
+            "Travel Advisories and Updates"
+        ]
+    },
+    {
+        "query": "renewable energy investments",
+        "positive": "Investment Opportunities in Renewable Energy",
+        "negative": [
+            "Investing in Traditional Energy Sectors",
+            "Modern Artists Making Waves",
+            "Recent Discoveries in Space Exploration"
+        ]
+    },
+    {
+        "query": "climate change policies",
+        "positive": "New Policies to Combat Climate Change",
+        "negative": [
+            "Environmental Policies of the Past",
+            "Latest Smartphone Innovations",
+            "Reviews of Top Hotels"
+        ]
+    },
+    {
+        "query": "space tourism advancements",
+        "positive": "Latest Developments in Space Tourism",
+        "negative": [
+            "Notable Space Missions from History",
+            "Recent Changes in Government Legislation",
+            "New Insights from Health Research"
+        ]
+    },
+    {
+        "query": "blockchain technology uses",
+        "positive": "Innovative Applications of Blockchain Technology",
+        "negative": [
+            "Technological Innovations Before Blockchain",
+            "Personal Travel Experiences",
+            "Sustainable Fashion Trends"
+        ]
+    },
+    {
+        "query": "nutrition and health",
+        "positive": "Recent Studies on Nutrition and Health",
+        "negative": [
+            "Latest News in the Health Sector",
+            "Emerging Technology Startups",
+            "Top Songs in the Music Charts"
+        ]
+    }
+]
