@@ -1,4 +1,3 @@
-# should properly split up these functions, some of this is pretty core to the engine, not just benchmarking.
 import pandas as pd
 from tqdm import tqdm
 import json
@@ -36,30 +35,54 @@ def apply_preprocessing(text, preprocessing_steps, vocabulary):
     return text
 
 def calculate_mrr(df, similarity_function, preprocessing_steps, vocabulary):
-    mrr_scores = []
-    none_count = 0
-    total_count = len(df)
+    mrr_scores = {}
+    none_count = {}
+    total_count = {}
     
-    for _, row in tqdm(df.iterrows(), total=total_count, desc="Calculating MRR"):
+    for _, row in tqdm(df.iterrows(), total=len(df), desc="Calculating MRR"):
+        file_id = row['file_id']
+        if file_id not in mrr_scores:
+            mrr_scores[file_id] = []
+            none_count[file_id] = 0
+            total_count[file_id] = 0
+        
+        total_count[file_id] += 1
+        
         query = apply_preprocessing(row['query'], preprocessing_steps, vocabulary)
         positives = [apply_preprocessing(pos, preprocessing_steps, vocabulary) for pos in row['positive']]
         negatives = [apply_preprocessing(neg, preprocessing_steps, vocabulary) for neg in row['negative']]
 
-        positive_similarities = [similarity_function.compute(query, pos) for pos in positives]
-        negative_similarities = [similarity_function.compute(query, neg) for neg in negatives]
+        all_documents = positives + negatives
+        similarities = [similarity_function.compute(query, doc) for doc in all_documents]
+
+        positive_similarities = similarities[:len(positives)]
+        negative_similarities = similarities[len(positives):]
 
         rr = get_reciprocal_rank(positive_similarities, negative_similarities)
-        if rr is None:
-            none_count += 1
-            mrr_scores.append(0)
-        else:
-            mrr_scores.append(rr)
+        mrr_scores[file_id].append(rr)
 
-    valid_scores = [score for score in mrr_scores if score is not None]
-    average_mrr = sum(valid_scores) / len(valid_scores) if valid_scores else 0
-    none_percentage = (none_count / total_count) * 100
+        # check if all similarities were zero
+        if all(sim == 0 for sim in similarities):
+            none_count[file_id] += 1
 
-    return average_mrr, none_percentage
+    results = {}
+    for file_id in mrr_scores:
+        valid_scores = [score for score in mrr_scores[file_id] if score is not None]
+        average_mrr = sum(valid_scores) / len(valid_scores) if valid_scores else 0
+        none_percentage = (none_count[file_id] / total_count[file_id]) * 100
+        results[file_id] = {
+            "average_mrr": average_mrr,
+            "none_percentage": none_percentage
+        }
+
+    # Calculate overall average
+    all_valid_scores = [score for scores in mrr_scores.values() for score in scores if score is not None]
+    overall_average_mrr = sum(all_valid_scores) / len(all_valid_scores) if all_valid_scores else 0
+    overall_none_percentage = sum(none_count.values()) / sum(total_count.values()) * 100
+
+    results['average_mrr'] = overall_average_mrr
+    results['none_percentage'] = overall_none_percentage
+    return results
 
 def save_results(results, id):
     output_dir = "experiment_results"
@@ -78,7 +101,7 @@ def create_vocabulary(df):
 
 def load_dataset(dataset):
     if dataset == "scidocs":
-        train_df, test_df = scidocs("train"), scidocs("test")[0:500]
+        train_df, test_df = scidocs("train"), scidocs("test")[1500:2000]
     elif dataset == "custom":
         train_df, test_df = custom("train"), custom("test")
     else:
