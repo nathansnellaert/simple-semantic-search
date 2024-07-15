@@ -77,15 +77,12 @@ def main():
         "Graph Search": {
             "param_ranges": {
                 "dataset": [DATASET],
-                "max_depth": [1, 2],
+                "max_depth": [1],
                 "damping_factor": [0.5, 0.8],
                 "preprocessing": [
-                    [],
-                    ["lowercase"],
                     ["lowercase", "remove_punctuation"],
                     ["lowercase", "remove_punctuation", "remove_stopwords"],
-                    ["lowercase", "remove_punctuation", "remove_stopwords", "stem_words"],
-                    ["lowercase", "remove_punctuation", "remove_stopwords", "stem_words", "nltk_lemmatize"],
+                    ["lowercase", "remove_punctuation", "remove_stopwords", "custom_lemmatize"],
                 ],
                 "graph_path": ["./data/small_graph.json", "./data/word_graph.json"],
             },
@@ -121,7 +118,11 @@ def main():
         "Sentence Transformers": {
             "param_ranges": {
                 "dataset": [DATASET],
-                "model": ["all-MiniLM-L6-v2", "all-mpnet-base-v2", "BAAI/bge-base-en-v1.5"]
+                "model": [
+                    "all-MiniLM-L6-v2", 
+                    "all-mpnet-base-v2", 
+                    "BAAI/bge-base-en-v1.5"
+               ]
             },
             "run_func": run_sentence_transformers_experiment,
         },
