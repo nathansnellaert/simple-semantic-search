@@ -6,11 +6,15 @@ import os
 import time
 from preprocessing.numbers import remove_numbers
 from preprocessing.stemming import stem_words
-from preprocessing.lemmatizer import nltk_lemmatization
+from preprocessing.lemmatizer import nltk_lemmatization, custom_graph_lemmatization, CustomGraphLemmatizer
 from preprocessing.stopwords import nltk_stopword_removal
 from preprocessing.simple import lowercase, remove_punctuation, remove_oov
 from evaluation.metrics import get_reciprocal_rank
 from evaluation.evals import scidocs
+
+# Initialize the custom lemmatizer
+graph_path = './data/lemma_mapping.json'
+custom_lemmatizer = CustomGraphLemmatizer(graph_path)
 
 preprocessing_functions = {
     'lowercase': lowercase,
@@ -18,7 +22,8 @@ preprocessing_functions = {
     'remove_numbers': remove_numbers,
     'stem_words': stem_words,
     'remove_stopwords': nltk_stopword_removal,
-    'lemmatize': nltk_lemmatization,
+    'nltk_lemmatize': nltk_lemmatization,
+    'custom_lemmatize': lambda text: custom_graph_lemmatization(text, custom_lemmatizer),
     'remove_oov': remove_oov
 }
 

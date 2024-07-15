@@ -10,18 +10,20 @@ from benchmark_jaccard_sim import run_experiment as run_jaccard_experiment
 def benchmark_graph_search():
     # Define parameter ranges for graph search
     datasets = ["scidocs"]
-    max_depths = [1, 2, ]
-    damping_factors = [0.5, 0.8, 1]
+    max_depths = [1, 2]
+    damping_factors = [0.5]
     preprocessing_steps = [
         "",
         "lowercase",
         "lowercase,remove_punctuation",
         "lowercase,remove_punctuation,remove_stopwords",
-        "lowercase,remove_punctuation,remove_stopwords,stem_words"
+        "lowercase,remove_punctuation,remove_stopwords,stem_words",
+        "lowercase,remove_punctuation,remove_stopwords,nltk_lemmatize",
+        "lowercase,remove_punctuation,remove_stopwords,custom_lemmatize,nltk_lemmatize",
+        "lowercase,remove_punctuation,remove_stopwords,custom_lemmatize,nltk_lemmatize,stem_words",
     ]
     graph_paths = [
         "./data/small_graph.json",
-        "./data/word_graph.json",
         "./data/word_graph.json",
     ]
 
@@ -53,8 +55,8 @@ def benchmark_bm25():
         # "lowercase",
         # "lowercase,remove_punctuation",
         "lowercase,remove_punctuation,remove_stopwords",
-        "lowercase,remove_punctuation,remove_stopwords,stem_words"
-        "lowercase,remove_punctuation,remove_stopwords,stem_words,lemmatize"
+        "lowercase,remove_punctuation,remove_stopwords,stem_words",
+        "lowercase,remove_punctuation,remove_stopwords,stem_words,nltk_lemmatize"
     ]
 
     # Generate all combinations of parameters
@@ -94,7 +96,10 @@ def benchmark_jaccard():
         "lowercase",
         "lowercase,remove_punctuation",
         "lowercase,remove_punctuation,remove_stopwords",
-        "lowercase,remove_punctuation,remove_stopwords,stem_words"
+        "lowercase,remove_punctuation,remove_stopwords,stem_words",
+        "lowercase,remove_punctuation,remove_stopwords,nltk_lemmatize",
+        "lowercase,remove_punctuation,remove_stopwords,custom_lemmatize,nltk_lemmatize",
+        "lowercase,remove_punctuation,remove_stopwords,custom_lemmatize,nltk_lemmatize,stem_words",
     ]
 
     # Generate all combinations of parameters
