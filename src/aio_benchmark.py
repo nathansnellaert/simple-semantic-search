@@ -7,6 +7,7 @@ from benchmark_graph_search import run_experiment as run_graph_search_experiment
 from benchmark_bm25 import run_experiment as run_bm25_experiment
 from benchmark_jaccard_sim import run_experiment as run_jaccard_experiment
 from benchmark_sentence_transformers import run_experiment as run_sentence_transformers_experiment
+from benchmark_knowledge_graph import run_experiment as run_knowledge_graph_experiment
 
 # Set the dataset at the script level
 DATASET = "scidocs"
@@ -89,6 +90,22 @@ def main():
             },
             "run_func": run_graph_search_experiment,
         },
+        "Knowledge Graph": {
+            "param_ranges": {
+                "dataset": [DATASET],
+                "max_depth": [1, 2],
+                "damping_factor": [0.8],
+                "use_weights": [True, False],
+                "use_directionality": [True, False],
+                "use_relationship_similarity": [True, False],
+                "preprocessing": [
+                    ["lowercase", "remove_punctuation", "remove_stopwords"],
+                    ["lowercase", "remove_punctuation", "remove_stopwords", "nltk_lemmatize"],
+                ],
+                "graph_path": ["./10000_relationships.json"],
+            },
+            "run_func": run_knowledge_graph_experiment,
+        },
         "BM25": {
             "param_ranges": {
                 "dataset": [DATASET],
@@ -126,7 +143,7 @@ def main():
                ]
             },
             "run_func": run_sentence_transformers_experiment,
-        },
+        }
     }
 
     for experiment_type, config in experiments.items():
