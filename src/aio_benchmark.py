@@ -77,12 +77,13 @@ def main():
         "Graph Search": {
             "param_ranges": {
                 "dataset": [DATASET],
-                "max_depth": [1],
+                "max_depth": [1, 2],
                 "damping_factor": [0.5, 0.8],
                 "preprocessing": [
                     ["lowercase", "remove_punctuation"],
                     ["lowercase", "remove_punctuation", "remove_stopwords"],
-                    ["lowercase", "remove_punctuation", "remove_stopwords", "custom_lemmatize"],
+                    ["lowercase", "remove_punctuation", "remove_stopwords", "remove_numbers"],
+                    ["lowercase", "remove_punctuation", "remove_stopwords", "remove_numbers", "nltk_lemmatize"]
                 ],
                 "graph_path": ["./data/small_graph.json", "./data/word_graph.json"],
             },
